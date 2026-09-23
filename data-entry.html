@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily KPI Entry | Weaving KPI</title><link rel="stylesheet" href="css/style.css"></head><body>
+
+<header class="top"><div class="brand">WEAVING KPI</div><nav class="nav"><a href="dashboard.html">Dashboard</a><a href="data-entry.html">Daily KPI</a><a href="fault-entry.html">Fault Entry</a><button data-logout>Logout</button></nav></header>
+<main class="wrap"><div class="hero"><h1>Daily KPI Entry</h1><p class="muted">Enter one record per Operator + Date + Shift + Loom.</p></div>
+<div class="card"><form id="entryForm"><div class="formgrid">
+<div class="field"><label>Date</label><input name="date" type="date" required></div>
+<div class="field"><label>Shift</label><select name="shift"><option>A</option><option>B</option><option>C</option></select></div>
+<div class="field"><label>Operator ID</label><input name="operator_id" required placeholder="e.g. STL005494"></div>
+<div class="field"><label>Operator Name</label><input name="operator" required></div>
+<div class="field"><label>Loom</label><input name="loom" required placeholder="e.g. L-025"></div>
+<div class="field"><label>Production (yd)</label><input name="production" type="number" min="0" required></div>
+<div class="field"><label>Production Target (yd)</label><input name="production_target" type="number" min="1" required value="10000"></div>
+<div class="field"><label>Efficiency %</label><input name="efficiency" type="number" step=".1" required></div>
+<div class="field"><label>Running %</label><input name="running" type="number" step=".1" required></div>
+<div class="field"><label>Availability %</label><input name="availability" type="number" step=".1" required></div>
+<div class="field"><label>Rejection %</label><input name="rejection" type="number" step=".01" required></div>
+<div class="field"><label>Faults / 1000 yd</label><input name="faults_1000" type="number" step=".1" required></div>
+<div class="field"><label>Downtime / 1000 yd</label><input name="downtime_1000" type="number" step=".1" required></div>
+<div class="field"><label>Housekeeping / SOP %</label><input name="housekeeping" type="number" step=".1" required></div>
+<div class="field"><label>Attendance / Discipline %</label><input name="attendance" type="number" step=".1" required></div>
+<div class="field"><label>Skill / Process Compliance %</label><input name="skill" type="number" step=".1" required></div>
+<div class="full"><button class="btn">SAVE KPI RECORD</button><div id="saveMsg" class="success"></div></div>
+</div></form></div></main>
+<script>window.SEED_RECORDS=[{"date": "2026-09-23", "shift": "A", "operator_id": "STL005494", "operator": "Demo Operator 1", "loom": "L-025", "production": 7533, "production_target": 10000, "efficiency": 87.9, "running": 95.3, "availability": 95.3, "rejection": 1.1, "faults_1000": 8.2, "downtime_1000": 16.5, "housekeeping": 96, "attendance": 100, "skill": 95}, {"date": "2026-09-23", "shift": "B", "operator_id": "STL005495", "operator": "Demo Operator 2", "loom": "L-026", "production": 9210, "production_target": 10000, "efficiency": 91.2, "running": 98.0, "availability": 97.5, "rejection": 0.65, "faults_1000": 6.4, "downtime_1000": 12.0, "housekeeping": 98, "attendance": 100, "skill": 97}, {"date": "2026-09-23", "shift": "C", "operator_id": "STL005496", "operator": "Demo Operator 3", "loom": "L-027", "production": 8460, "production_target": 10000, "efficiency": 85.6, "running": 94.0, "availability": 93.5, "rejection": 1.35, "faults_1000": 11.0, "downtime_1000": 23.0, "housekeeping": 94, "attendance": 100, "skill": 94}];</script>
+<script src="js/app.js"></script></body></html>
