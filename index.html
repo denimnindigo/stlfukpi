@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102d46"><meta name="description" content="STL FU Weaving KPI Management System">
+<title>STL FU · Weaving KPI</title><link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="auth-body">
+<div class="auth-shell"><div class="auth-texture"></div><div class="auth-card">
+  <div class="brand-lockup"><div class="brand-mark">WK</div><div><div class="eyebrow">STL FU · WEAVING</div><h1>Performance Management</h1><p>Denim mill KPI control room</p></div></div>
+  <div class="auth-tabs"><button class="auth-tab active" data-auth="login">Sign in</button><button class="auth-tab" data-auth="register">Visitor access</button></div>
+  <div id="authNotice" class="notice" hidden></div>
+  <form id="loginForm" class="auth-form">
+    <label>Email<input id="loginEmail" type="email" autocomplete="email" required placeholder="name@company.com"></label>
+    <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Password"></label>
+    <button class="primary-btn" type="submit">Sign in <span>→</span></button>
+    <button id="forgotBtn" class="text-btn" type="button">Forgot password?</button>
+    <div id="loginError" class="form-error"></div>
+  </form>
+  <form id="registerForm" class="auth-form" hidden>
+    <div class="form-note">Visitor accounts are self-registered. Manager and Data Entry accounts are controlled by Admin.</div>
+    <label>Name<input id="regName" required placeholder="Your name"></label>
+    <label>Email<input id="regEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+    <label>Password<input id="regPassword" type="password" minlength="6" autocomplete="new-password" required placeholder="At least 6 characters"></label>
+    <button class="primary-btn" type="submit">Create visitor account <span>→</span></button>
+    <div id="registerError" class="form-error"></div>
+  </form>
+  <form id="resetForm" class="auth-form" hidden>
+    <div class="form-note">We'll send a password-reset link to your email.</div>
+    <label>Email<input id="resetEmail" type="email" required placeholder="name@company.com"></label>
+    <button class="primary-btn" type="submit">Send reset link <span>→</span></button>
+    <button id="backLogin" class="text-btn" type="button">Back to sign in</button>
+    <div id="resetError" class="form-error"></div>
+  </form>
+  <div class="auth-foot"><span>Indigo / Woven / Controlled</span><span>v2.0</span></div>
+</div></div>
+<script src="app.js"></script></body></html>
