@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STL-Fabric Unit · Weaving KPI — Presentation Demo</title>
+<style>
+:root{--ink:#123247;--blue:#165b7d;--cyan:#63b9cb;--bg:#071d2b;--card:#f7fbfc;--line:#d8e7ec;--muted:#687b84}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background:repeating-linear-gradient(45deg,transparent 0 5px,#fff 6px,transparent 7px 12px)}
+header{position:sticky;top:0;z-index:5;background:#08283a;color:#fff;padding:14px 22px;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:11px;align-items:center}.logo{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(145deg,#174765,#2a789b);font-weight:900}.brand b{display:block;letter-spacing:2px}.brand span{font-size:12px;opacity:.72}.demo{border:1px solid #78c9d8;border-radius:18px;padding:7px 12px;font-size:12px}
+.wrap{max-width:1250px;margin:auto;padding:25px 18px}.hero{color:#fff;margin-bottom:18px}.hero h1{font-size:clamp(28px,4vw,44px);margin:0 0 5px}.hero p{margin:0;color:#b9d2dc}
+.banner{background:#fff5d8;color:#705713;border:1px solid #ead79a;border-radius:11px;padding:11px 14px;font-size:12px;margin-bottom:15px}
+.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:15px}.tab{border:0;border-radius:9px;padding:10px 13px;font-weight:800;color:#183e51;background:#dcebf0;white-space:nowrap}.tab.active{background:var(--cyan);color:#fff}
+.page{display:none}.page.active{display:block}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px;box-shadow:0 8px 22px #0003}.metric .label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.07em}.metric .value{font-size:29px;font-weight:900;margin-top:7px}.metric .sub,.note{font-size:12px;color:var(--muted);margin-top:4px}
+.two{display:grid;grid-template-columns:1.3fr .7fr;gap:13px;margin-top:13px}.section{margin-top:13px}.card h3{margin-top:0}.bars{display:grid;gap:12px}.bar{display:grid;grid-template-columns:150px 1fr 50px;gap:8px;align-items:center;font-size:12px}.track{height:10px;background:#e4edf0;border-radius:10px}.fill{height:100%;background:#317b98;border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}th{font-size:10px;color:var(--muted);text-transform:uppercase}.pill{padding:4px 8px;border-radius:20px;font-weight:800;font-size:11px}.good{background:#ddf1e7;color:#217653}.warn{background:#fff0d5;color:#a66b13}.bad{background:#f6dedb;color:#a74740}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.field label{display:block;font-size:10px;font-weight:800;color:var(--muted);margin-bottom:4px}.field input,.field select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fff}.button{margin-top:14px;border:0;border-radius:8px;padding:11px 16px;background:#155a7c;color:#fff;font-weight:800}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.bar{grid-template-columns:105px 1fr 45px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.wrap{padding:17px 11px}}
+</style></head>
+<body>
+<header><div class="brand"><div class="logo">WK</div><div><b>STL FU · WEAVING</b><span>Performance Management · Denim Mill KPI Control Room</span></div></div><div class="demo">PRESENTATION DEMO</div></header>
+<main class="wrap">
+<div class="hero"><h1>Weaving KPI Control Room</h1><p>Production · loom efficiency · faults · downtime · operator performance</p></div>
+<div class="banner"><b>Presentation mode:</b> demonstrates the intended workflow without requiring Supabase login. This is not a live production-data connection.</div>
+<nav class="tabs">
+<button class="tab active" onclick="show('dash',this)">Management Dashboard</button>
+<button class="tab" onclick="show('op',this)">Operator View</button>
+<button class="tab" onclick="show('loom',this)">Loom Performance</button>
+<button class="tab" onclick="show('fault',this)">Fault & Downtime</button>
+<button class="tab" onclick="show('entry',this)">Daily KPI Entry</button>
+</nav>
+
+<section id="dash" class="page active">
+<div class="grid">
+<div class="card metric"><div class="label">Operators</div><div class="value">56</div><div class="sub">Imported Excel records</div></div>
+<div class="card metric"><div class="label">Looms</div><div class="value">140</div><div class="sub">Loom master</div></div>
+<div class="card metric"><div class="label">Daily KPI</div><div class="value">56</div><div class="sub">Imported sample records</div></div>
+<div class="card metric"><div class="label">Fault types</div><div class="value">13</div><div class="sub">Fault master</div></div>
+</div>
+<div class="two">
+<div class="card"><h3>Control indicators</h3><div class="bars">
+<div class="bar"><b>Production achievement</b><div class="track"><div class="fill" style="width:82%"></div></div><b>82%</b></div>
+<div class="bar"><b>Loom efficiency</b><div class="track"><div class="fill" style="width:88%"></div></div><b>88%</b></div>
+<div class="bar"><b>Availability</b><div class="track"><div class="fill" style="width:95%"></div></div><b>95%</b></div>
+<div class="bar"><b>Housekeeping / SOP</b><div class="track"><div class="fill" style="width:96%"></div></div><b>96%</b></div>
+</div><p class="note">The live version will calculate these indicators from the Supabase KPI database.</p></div>
+<div class="card"><h3>Weighted KPI model</h3><table><tr><td>Production</td><td>20%</td></tr><tr><td>Loom Efficiency</td><td>15%</td></tr><tr><td>Running / Availability</td><td>15%</td></tr><tr><td>Quality / Rejection</td><td>15%</td></tr><tr><td>Fault Control</td><td>10%</td></tr><tr><td>Downtime Control</td><td>10%</td></tr><tr><td>Other controls</td><td>15%</td></tr></table></div>
+</div></section>
+
+<section id="op" class="page"><div class="card"><h3>Operator Performance</h3><table><tr><th>Operator</th><th>Production</th><th>Efficiency</th><th>Fault / 1000 yd</th><th>Downtime / 1000 yd</th><th>Overall</th><th>Status</th></tr>
+<tr><td><b>STL005492</b><br>MD. MINHAZ ALI</td><td>94.2%</td><td>87.9%</td><td>11.8</td><td>8.7</td><td>92.4</td><td><span class="pill good">B+</span></td></tr>
+<tr><td><b>STL005494</b><br>Sample operator</td><td>75.3%</td><td>87.9%</td><td>12.1</td><td>18.5</td><td>79.5</td><td><span class="pill bad">C</span></td></tr>
+<tr><td><b>STL005507</b><br>MD. SAIFUL ISLAM-2</td><td>67.5%</td><td>—</td><td>10.8</td><td>17.1</td><td>—</td><td><span class="pill warn">INCOMPLETE</span></td></tr>
+</table><p class="note">The examples use imported migration values where available. This page is explicitly a presentation demo.</p></div></section>
+
+<section id="loom" class="page"><div class="grid">
+<div class="card metric"><div class="label">Loom master</div><div class="value">140</div><div class="sub">Looms configured</div></div>
+<div class="card metric"><div class="label">Running target</div><div class="value">8 hr</div><div class="sub">Per designated loom / shift</div></div>
+<div class="card metric"><div class="label">Efficiency formula</div><div class="value">RPM</div><div class="sub">RPM × 60 × running hr ÷ (PPI × 36)</div></div>
+<div class="card metric"><div class="label">Availability</div><div class="value">95%</div><div class="sub">Provisional control target</div></div>
+</div><div class="card section"><h3>Example loom view</h3><table><tr><th>Loom</th><th>Operator</th><th>Production yd</th><th>Running hr</th><th>Efficiency</th><th>Condition</th></tr>
+<tr><td>G6</td><td>STL005491</td><td>569</td><td>7.5</td><td>91%</td><td><span class="pill good">Stable</span></td></tr>
+<tr><td>H5</td><td>STL005494</td><td>480</td><td>6.9</td><td>84%</td><td><span class="pill warn">Watch</span></td></tr>
+<tr><td>K2</td><td>STL005492</td><td>538</td><td>7.8</td><td>94%</td><td><span class="pill good">Stable</span></td></tr>
+</table></div></section>
+
+<section id="fault" class="page"><div class="grid">
+<div class="card metric"><div class="label">Fault events</div><div class="value">17</div><div class="sub">Example daily view</div></div>
+<div class="card metric"><div class="label">Affected fabric</div><div class="value">27 yd</div><div class="sub">Separate measure</div></div>
+<div class="card metric"><div class="label">Downtime</div><div class="value">24 min</div><div class="sub">Example daily view</div></div>
+<div class="card metric"><div class="label">Fault / 1000 yd</div><div class="value">11.8</div><div class="sub">Normalized frequency</div></div>
+</div><div class="card section"><h3>Fault & downtime workflow</h3><table><tr><th>Fault</th><th>Category</th><th>Frequency</th><th>Affected yd</th><th>Downtime</th><th>Responsibility</th></tr>
+<tr><td>Warp Break</td><td>Warp</td><td>6</td><td>—</td><td>9 min</td><td>Operator</td></tr>
+<tr><td>Weft Break</td><td>Weft</td><td>4</td><td>—</td><td>6 min</td><td>Operator</td></tr>
+<tr><td>Stop Mark</td><td>Mark</td><td>3</td><td>18</td><td>5 min</td><td>Process</td></tr>
+<tr><td>Y Mix</td><td>Contamination</td><td>1</td><td>9</td><td>—</td><td>Material</td></tr>
+</table></div></section>
+
+<section id="entry" class="page"><div class="card"><h3>Daily KPI Entry</h3><div class="fields">
+<div class="field"><label>DATE</label><input value="23-Sep-2026"></div>
+<div class="field"><label>OPERATOR ID</label><input value="STL005492"></div>
+<div class="field"><label>ACTUAL SHIFT</label><select><option>A</option><option>B</option><option>C</option></select></div>
+<div class="field"><label>LOOMS</label><input value="K1,K2,K3,K4,K5,L1,L2,L3,L4,L5"></div>
+<div class="field"><label>PRODUCTION (YD)</label><input value="1602"></div>
+<div class="field"><label>RUNNING HOURS</label><input value="7.8"></div>
+<div class="field"><label>REJECTION %</label><input value="1.25"></div>
+<div class="field"><label>ATTENDANCE %</label><input value="98.75"></div>
+<div class="field"><label>HOUSEKEEPING / SOP %</label><input value="95"></div>
+</div><button class="button" onclick="alert('Presentation demo only. In production this saves to Supabase.')">Save KPI Entry</button></div></section>
+</main>
+<script>
+function show(id,b){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');scrollTo(0,0)}
+</script></body></html>
